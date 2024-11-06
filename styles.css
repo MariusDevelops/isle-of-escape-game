@@ -5,11 +5,13 @@
 }
 
 body {
-  background-color: gray;
+  background-color: rgb(30, 33, 58);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 40px;
+  margin-top: 10vh;
+  color: whitesmoke;
+  font-size: 24px;
 }
 
 h1 {
@@ -17,13 +19,22 @@ h1 {
 }
 
 .mainUiContainer {
-  border: 5px solid black;
   display: flex;
   flex-direction: row;
 }
 
+.regionImageContainer {
+  width: 300px;
+  height: 300px;
+  margin: 0 50px 50px 0;
+  border: 5px solid #566c86;
+}
+
 .mapImageContainer {
-  width: 400px;
+  width: 300px;
+  height: 300px;
+  margin: 0 50px 0 0;
+  border: 5px solid #566c86;
 }
 
 .picturesContainer {
@@ -37,12 +48,6 @@ h1 {
   border: 5px solid black;
 }
 
-.regionImageContainer {
-  height: 200px;
-  width: 400px;
-  border: 5px solid black;
-}
-
 .gameOutput,
 .gameInput {
   padding: 20px;
@@ -50,9 +55,8 @@ h1 {
 }
 
 .gameOutput {
-  height: 300px;
-  border: 5px solid black;
-  overflow-y: scroll;
+  height: 580px;
+  /* overflow-y: scroll; */
   margin-bottom: 20px;
 }
 
@@ -60,20 +64,27 @@ h1 {
   height: 50px;
 }
 
-.inventoryHealthContainer {
-  height: 600px;
-  width: 200px;
-  border: 5px solid black;
-}
-
-.healthBar {
+.healthContainer {
   height: 100px;
-  width: 200px;
-  border: 5px solid black;
+  width: 300px;
+  border: 5px solid #566c86;
+  margin: 0 0 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.inventoryBar {
+.inventoryContainer {
   height: 500px;
-  width: 200px;
-  border: 5px solid black;
+  width: 300px;
+  border: 5px solid #566c86;
+  margin: 0 0 0 50px;
+}
+
+.inventoryNameContainer {
+  height: 100px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

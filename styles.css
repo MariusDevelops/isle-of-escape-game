@@ -9,12 +9,38 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10vh;
-  height: 100vh;
+  margin: 40px;
 }
 
 h1 {
   margin-bottom: 20px;
+}
+
+.mainUiContainer {
+  border: 5px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.mapImageContainer {
+  width: 400px;
+}
+
+.picturesContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.profilePicture {
+  height: 200px;
+  width: 200px;
+  border: 5px solid black;
+}
+
+.regionImageContainer {
+  height: 200px;
+  width: 400px;
+  border: 5px solid black;
 }
 
 .gameOutput,
@@ -32,4 +58,22 @@ h1 {
 
 .gameInput {
   height: 50px;
+}
+
+.inventoryHealthContainer {
+  height: 600px;
+  width: 200px;
+  border: 5px solid black;
+}
+
+.healthBar {
+  height: 100px;
+  width: 200px;
+  border: 5px solid black;
+}
+
+.inventoryBar {
+  height: 500px;
+  width: 200px;
+  border: 5px solid black;
 }

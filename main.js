@@ -1,9 +1,19 @@
 import islandRegions from "./data/islandRegions.js";
+import {
+  gameIntro,
+  gameState,
+  displayMessage,
+  displayMessage2,
+  typeWriter,
+} from "./scripts/gameIntro.js";
 
 let currentRegion = islandRegions.rockySeaside;
 
 const gameOutput = document.querySelector(".gameOutput");
 const gameInput = document.querySelector(".gameInput");
+const outputImgContainer = document.querySelector(".outputImgContainer");
+const outputTextContainer = document.querySelector(".outputTextContainer");
+const outputTextContainer2 = document.querySelector(".outputTextContainer2");
 
 gameInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
@@ -15,18 +25,23 @@ function processCommand() {
   const command = gameInput.value.trim().toLowerCase();
   const paragraph = document.createElement("p");
 
-  if (command === "help") {
-    paragraph.textContent +=
+  outputTextContainer.textContent = "";
+  outputTextContainer2.textContent = "";
+
+  if (gameState === "processCommand" && command === "help") {
+    displayMessage(
       "list of commands: help, " +
-      Object.keys(currentRegion.exits).join(", ") +
-      ".";
+        Object.keys(currentRegion.exits).join(", ") +
+        "."
+    );
   } else if (currentRegion.exits[command]) {
     const nextIslandRegionKey = currentRegion.exits[command];
     currentRegion = islandRegions[nextIslandRegionKey];
-    paragraph.textContent += `You moved ${command} to ${currentRegion.name}. ${currentRegion.description}`;
+    displayMessage(
+      `You moved ${command} to ${currentRegion.name}. ${currentRegion.description}`
+    );
   } else {
-    paragraph.textContent +=
-      "Wrong command or you can't move in that direction.";
+    displayMessage("Wrong command or you can't move in that direction.");
   }
   gameOutput.scrollTop = gameOutput.scrollHeight;
 

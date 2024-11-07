@@ -42,12 +42,6 @@ h1 {
   flex-direction: row;
 }
 
-.profilePicture {
-  height: 200px;
-  width: 200px;
-  border: 5px solid black;
-}
-
 .gameOutput,
 .gameInput {
   padding: 20px;
@@ -56,8 +50,16 @@ h1 {
 
 .gameOutput {
   height: 580px;
-  /* overflow-y: scroll; */
   margin-bottom: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.outputTextContainer {
+  padding-bottom: 24px;
 }
 
 .gameInput {

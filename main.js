@@ -1,11 +1,5 @@
 import islandRegions from "./data/islandRegions.js";
-import {
-  gameIntro,
-  gameState,
-  displayMessage,
-  displayMessage2,
-  typeWriter,
-} from "./scripts/gameIntro.js";
+import { gameIntro, gameState, displayMessage } from "./scripts/gameIntro.js";
 
 let currentRegion = islandRegions.rockySeaside;
 
@@ -13,7 +7,6 @@ const gameOutput = document.querySelector(".gameOutput");
 const gameInput = document.querySelector(".gameInput");
 const outputImgContainer = document.querySelector(".outputImgContainer");
 const outputTextContainer = document.querySelector(".outputTextContainer");
-const outputTextContainer2 = document.querySelector(".outputTextContainer2");
 
 gameInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
@@ -26,7 +19,6 @@ function processCommand() {
   const paragraph = document.createElement("p");
 
   outputTextContainer.textContent = "";
-  outputTextContainer2.textContent = "";
 
   if (gameState === "processCommand" && command === "help") {
     displayMessage(

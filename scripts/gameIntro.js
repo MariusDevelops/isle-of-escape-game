@@ -13,40 +13,21 @@ function gameIntro() {
   outputImgContainer.appendChild(profilePicture);
 
   displayMessage(
-    `Hello, <strong>Commander</strong>. I am PYKE, your AI drone assistant. You were in an attack on your way to the Cyborg Space C325 settlement, and now you’ve woken up on this island. I’m here to help you navigate, repair the ship, and find your way to safety. Follow the instructions in your interface to proceed.`
+    `Hello, Commander. I am Poko2, your AI drone assistant. You were in an attack on your way to the Cyborg Space C325 settlement, and now you’ve woken up on this island.<br>
+    I’m here to help you navigate, repair the ship, and find your way to safety.<br><br>
+    Follow the instructions in your interface to proceed.<br>
+    Type <strong style="color: lightgreen;">HELP</strong> and get list of commands to use.`
   );
-
-  setTimeout(() => {
-    displayMessage2(`Write help and get list of commands to use.`);
-  }, 10000);
 
   gameState = "processCommand";
 }
 
 function displayMessage(text) {
   const paragraph = document.createElement("p");
-  // paragraph.innerHTML = text;
-  typeWriter(paragraph, text, 0);
+  paragraph.innerHTML = text;
   outputTextContainer.appendChild(paragraph);
-}
-
-function displayMessage2(text) {
-  const paragraph = document.createElement("p");
-  typeWriter(paragraph, text, 0);
-  outputTextContainer2.appendChild(paragraph);
-}
-
-function typeWriter(element, text, index) {
-  if (index < text.length) {
-    element.textContent += text.charAt(index);
-    index++;
-    gameOutput.scrollTop = gameOutput.scrollHeight;
-    setTimeout(function () {
-      typeWriter(element, text, index);
-    }, 30);
-  }
 }
 
 gameIntro();
 
-export { gameIntro, gameState, displayMessage, displayMessage2, typeWriter };
+export { gameIntro, gameState, displayMessage };

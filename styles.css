@@ -18,6 +18,10 @@ h1 {
   margin-bottom: 20px;
 }
 
+p {
+  line-height: 1.25;
+}
+
 .mainUiContainer {
   display: flex;
   flex-direction: row;

@@ -13,10 +13,12 @@ function gameIntro() {
   outputImgContainer.appendChild(profilePicture);
 
   displayMessage(
-    `Hello, Commander. I am Poko2, your AI drone assistant. You were in an attack on your way to the Cyborg Space C325 settlement, and now you’ve woken up on this island.<br>
+    `Hello, Commander!<br>
+    I am Poko2, your AI drone assistant. You were in an attack on your way to the Cyborg Space C325 settlement, and now you’ve woken up on this island.<br>
     I’m here to help you navigate, repair the ship, and find your way to safety.<br><br>
-    Follow the instructions in your interface to proceed.<br>
-    Type <strong style="color: lightgreen;">HELP</strong> and get list of commands to use.`
+    Now you are in empty rocky coastline with an escape capsule.<br><br>
+    What you want to do next?<br><br>
+    Type <span class="highlight">HELP</span> or <span class="highlight">H</span> and get a list of commands to use.`
   );
 
   gameState = "processCommand";

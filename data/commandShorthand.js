@@ -4,6 +4,7 @@ const commandShorthand = {
   s: "south",
   e: "east",
   w: "west",
+  inv: "investigate",
 };
 
 export default commandShorthand;

@@ -10,6 +10,7 @@ const islandRegions = {
     exits: {
       north: "jungle",
     },
+    investigate: "You investigate capsule and find some usefull items.",
   },
   jungle: {
     name: "jungle",

@@ -26,8 +26,9 @@ function processCommand() {
 
   if (gameState === "processCommand" && fullCommand === "help") {
     displayMessage(
-      `<br>Command list - <span class="highlight">HELP</span>
-      <br>Move - ${moveDirectionHtml}.`
+      `<br>Command list - <span class="highlight">HELP / H</span>.
+      <br>Move - ${moveDirectionHtml}.
+      <br>Investigate place - <span class="highlight">INVESTIGATE / INV</span>.`
     );
   } else if (currentRegion.exits[fullCommand]) {
     const nextIslandRegionKey = currentRegion.exits[fullCommand];
@@ -35,6 +36,10 @@ function processCommand() {
     displayMessage(
       `<br>You moved ${fullCommand} to ${currentRegion.name}. ${currentRegion.description}`
     );
+  } else if (fullCommand === "investigate") {
+    fullCommand in currentRegion
+      ? displayMessage(`<br>${currentRegion[fullCommand]}`)
+      : displayMessage(`<br>There is nothing of interest here.`);
   } else {
     displayMessage(`<br>Wrong command or you can't move in that direction.`);
   }

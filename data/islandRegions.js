@@ -11,6 +11,7 @@ const islandRegions = {
       north: "jungle",
     },
     investigate: "You investigate capsule and find some usefull items.",
+    items: ["medkit", "spare part"],
   },
   jungle: {
     name: "jungle",
@@ -19,6 +20,8 @@ const islandRegions = {
       south: "rockySeaside",
       north: "mountain",
     },
+    investigate: "You investigate spaceship and find some usefull items.",
+    items: ["energy cell"],
   },
   mountain: {
     name: "mountain",
@@ -26,6 +29,7 @@ const islandRegions = {
     exits: {
       south: "jungle",
     },
+    items: [],
   },
 };
 

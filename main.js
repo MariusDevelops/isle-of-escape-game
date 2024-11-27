@@ -23,6 +23,8 @@ function processCommand() {
     .toUpperCase();
   const moveDirectionHtml = `<span class="highlight">${moveDirection}</span>`;
   const fullCommand = commandShorthand[command] || command;
+  const regionItems = currentRegion.items.join(", ").toUpperCase();
+  const regionItemsHtml = `<span class="highlight">${regionItems}</span>`;
 
   if (gameState === "processCommand" && fullCommand === "help") {
     displayMessage(
@@ -38,7 +40,7 @@ function processCommand() {
     );
   } else if (fullCommand === "investigate") {
     fullCommand in currentRegion
-      ? displayMessage(`<br>${currentRegion[fullCommand]}`)
+      ? displayMessage(`<br>${currentRegion[fullCommand]} ${regionItemsHtml}`)
       : displayMessage(`<br>There is nothing of interest here.`);
   } else {
     displayMessage(`<br>Wrong command or you can't move in that direction.`);

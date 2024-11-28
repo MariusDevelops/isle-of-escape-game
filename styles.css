@@ -99,3 +99,9 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+.inventoryListContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

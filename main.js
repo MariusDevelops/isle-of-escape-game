@@ -32,7 +32,8 @@ function processCommand() {
       `<br>Command list - <span class="highlight">HELP / H</span>.
       <br>Move - ${moveDirectionHtml}.
       <br>Investigate place - <span class="highlight">INVESTIGATE / INV</span>.
-      <br>Pickup item - <span class="highlight">PICKUP [ITEM NAME]</span>.`
+      <br>Pickup item - <span class="highlight">PICKUP [ITEM NAME]</span>.
+      <br>Drop item - <span class="highlight">DROP [ITEM NAME]</span>.`
     );
   } else if (currentRegion.exits[fullCommand]) {
     const nextIslandRegionKey = currentRegion.exits[fullCommand];
@@ -47,6 +48,9 @@ function processCommand() {
   } else if (fullCommand.startsWith("pickup ")) {
     const itemToPick = fullCommand.slice(7).trim();
     pickUpItem(itemToPick);
+  } else if (fullCommand.startsWith("drop ")) {
+    const itemToDrop = fullCommand.slice(5).trim();
+    dropItem(itemToDrop);
   } else {
     displayMessage(`<br>Wrong command or you can't move in that direction.`);
   }
@@ -64,6 +68,17 @@ function pickUpItem(item) {
     updateInventoryUI();
   } else {
     displayMessage(`<br>${item} is not available to pick up here.`);
+  }
+}
+
+function dropItem(item) {
+  if (player.inventory.includes(item)) {
+    player.inventory = player.inventory.filter((i) => i !== item);
+    currentRegion.items.push(item);
+    displayMessage(`<br>You dropped: ${item}.`);
+    updateInventoryUI();
+  } else {
+    displayMessage(`<br>You don't have ${item} in your inventory.`);
   }
 }
 
